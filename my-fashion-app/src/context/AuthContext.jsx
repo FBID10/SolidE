@@ -1,5 +1,7 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:9090/api';
+
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
@@ -100,7 +102,7 @@ export function AuthProvider({ children }) {
 
   // New: pre-register flow (no user is created yet)
   const preRegister = async (email, password, name) => {
-    const resp = await fetch('http://localhost:9090/api/auth/pre-register', {
+    const resp = await fetch(`${API_BASE_URL}/auth/pre-register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password, name }),
