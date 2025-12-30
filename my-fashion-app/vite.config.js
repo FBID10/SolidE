@@ -5,13 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    host: true,
-    // Use port 5174 to match the browser URL you shared (localhost:5174)
-    port: 5174,
-    hmr: {
-      protocol: 'ws',
-      host: 'localhost',
-      // If your browser accesses the app through a different hostname, set it here.
-    }
+    port: 5173, // Default Vite port
+    host: true  // Allows access from outside the container
   }
 })
