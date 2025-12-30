@@ -1,0 +1,86 @@
+.suggestion-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.suggestion-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+
+.suggestion-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.suggestion-card-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.suggestion-card-image-placeholder {
+    width: 50px;
+    height: 50px;
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    flex-shrink: 0;
+    /* Styles for placeholder removed for brevity, can add back if needed */
+}
+
+.suggestion-card-details {
+  flex-grow: 1;
+  text-align: left;
+  min-width: 0;
+}
+
+.suggestion-card-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #111827;
+}
+
+.suggestion-card-price {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.suggestion-card-add-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: #f3f4f6; /* Lighter background */
+  color: #374151; /* Darker icon color */
+  font-size: 0.9rem; /* Smaller icon */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.suggestion-card-add-btn:hover {
+  transform: scale(1.1);
+  background-color: #e5e7eb; /* Slightly darker on hover */
+}
+
+.suggestion-card-add-btn:active {
+    transform: scale(1.0);
+}

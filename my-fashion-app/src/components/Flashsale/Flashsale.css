@@ -1,0 +1,198 @@
+
+.banner {
+  position: relative; 
+  overflow: hidden;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0045b4, #a601d8);
+}
+
+.banner-content {
+  position: relative; 
+  z-index: 2; 
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.banner-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.banner-title {
+  font-size: 5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 10px 0 20px 0;
+  line-height: 1.1;
+}
+
+.banner-countdown {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  padding: 10px 15px;
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.countdown-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.countdown-label {
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.banner-btn {
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  background-color: #ffc107;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Sale Badge Styles --- */
+.sale-badge {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  z-index: 3; 
+  width: 110px;
+  height: 110px;
+  background: linear-gradient(45deg, #d90429, #ef233c);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(0);
+  animation: pulse 1s ease-in-out 1.2s infinite;
+}
+
+.sale-badge-percent {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sale-badge-text {
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0) rotate(-90deg); opacity: 0; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; 
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background-color: hsl(var(--hue), 100%, 70%);
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+}
+
+.confetti-container.active .confetti-piece {
+  animation: confettiBurst var(--duration) ease-out forwards;
+}
+
+@keyframes confettiBurst {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x-end), var(--y-end)) rotate(720deg) scale(0);
+    opacity: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+  .countdown-number {
+    font-size: 1.8rem;
+  }
+  .countdown-box {
+    padding: 8px 10px;
+    min-width: 55px;
+  }
+  .sale-badge {
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    right: 10px;
+  }
+  .sale-badge-percent {
+    font-size: 1.8rem;
+  }
+  .sale-badge-text {
+    font-size: 0.7rem;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

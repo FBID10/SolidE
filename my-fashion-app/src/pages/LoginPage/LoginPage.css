@@ -1,0 +1,119 @@
+.login-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 80px);
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+.login-field {
+  text-align: left;
+}
+
+.login-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.login-field input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.login-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #012156, #3b004e);
+  transition: all 0.3s ease;
+}
+
+.login-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.login-error {
+  color: #ef4444;
+  background-color: #fee2e2;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.login-switch {
+  margin-top: 20px;
+  color: #6b7280;
+}
+
+.login-switch a {
+  color: #012156;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-forgot {
+  text-align: right;
+  margin: 6px 0 12px 0; /* ensure positive spacing so it's visible */
+  display: block;
+}
+
+.forgot-link {
+  color: #ffffff;
+  background: linear-gradient(90deg,#0b2b6b,#5f0a6b);
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: inline-block;
+}
+
+.forgot-link:hover {
+  opacity: 0.92;
+}

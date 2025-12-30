@@ -1,0 +1,19 @@
+# Use a slim version of OpenJDK for a smaller image size
+FROM openjdk:17-jdk-slim
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# The main application JAR file created in the 'target/' folder.
+# NOTE: Update 'SolidDesign.jar' to match the exact name of your final JAR file.
+# Assuming you named your final JAR: SolidDesign.jar
+ARG JAR_FILE=target/SolidDesign-0.0.1-SNAPSHOT.jar
+
+# Copy the application JAR into the container
+COPY ${JAR_FILE} app.jar
+
+# The application is expected to run on port 9090 (from your API docs)
+EXPOSE 9090
+
+# Command to run the JAR file when the container starts
+ENTRYPOINT ["java", "-jar", "app.jar"]

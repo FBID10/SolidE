@@ -1,0 +1,379 @@
+.spp-container {
+  font-family: 'Poppins', sans-serif;
+  width: 1441px; 
+  margin: 60px auto;
+  padding: 0 40px;
+  color: #111827;
+  justify-content: left;
+}
+
+.spp-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px; 
+  margin-bottom: 60px;
+}
+
+.spp-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.spp-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.spp-header {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.spp-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin: 0; 
+}
+
+.spp-price {
+  font-size: 2rem;
+  font-weight: 600; 
+  margin: 0;
+  color: #374151;
+}
+
+.spp-description {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  color: #4b5563;
+  max-width: 60ch;
+  text-align: left;
+}
+
+.spp-options {
+    margin-bottom: 32px;
+    text-align: left;
+}
+
+.spp-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.spp-btn-primary,
+.spp-btn-secondary {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 2px solid transparent; 
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.spp-btn-primary {
+  background: linear-gradient(135deg, #012156, #3b004e);
+  color: #fff;
+}
+
+.spp-btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.spp-btn-secondary {
+  background-color: transparent;
+  border-color: #012156;
+  color: #012156;
+}
+
+.spp-btn-secondary:hover {
+  background-color: #012156;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.spp-main-image-wrapper {
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spp-main-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.spp-main-image-wrapper:hover .spp-main-image {
+  transform: scale(1.05);
+}
+
+.spp-thumbnail-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.spp-thumbnail {
+  border: 2px solid transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  background-color: #f3f4f6;
+}
+
+.spp-thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.spp-thumbnail:hover {
+  border-color: #d1d5db;
+}
+
+.spp-thumbnail.active {
+  border-color: #012156; 
+}
+
+
+.spp-option-group {
+  margin-bottom: 24px;
+}
+
+.spp-option-label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #374151;
+}
+
+.spp-option-label span {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.spp-color-selector {
+  display: flex;
+  gap: 15px;
+}
+
+.spp-color-swatch {
+  width: 25px;
+  height: 35px;
+  border: 2px solid #000000;
+  border-radius: 0%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.spp-color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.spp-color-swatch.active {
+    box-shadow: 0 0 0 3px #fff, 0 0 0 5px #012156; 
+}
+
+.spp-color-swatch[style*="backgroundColor: White"] {
+  border-color: #d1d5db;
+}
+.spp-color-swatch[style*="backgroundColor: White"].active {
+  border-color: #012156;
+}
+
+.spp-size-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.spp-size-btn {
+  padding: 10px 20px;
+  border: 2px solid #d1d5db;
+  border-radius: 50px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.spp-size-btn:hover {
+  border-color: #012156;
+  color: #012156;
+}
+
+.spp-size-btn.active {
+  background-color: #012156;
+  border-color: #012156;
+  color: #fff;
+}
+
+.spp-stock-indicator {
+  margin-bottom: 24px;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #fffbeb;
+  color: #b45309;
+  font-weight: 600;
+  text-align: center;
+}
+
+.spp-additional-perks {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.spp-payment-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 46px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.spp-perks-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.spp-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.spp-perk-icon {
+  color: #012156; 
+  font-size: 2rem;
+}
+
+.spp-add-to-cart-feedback {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 9999;
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: #001fbd;
+  color: #ffffff;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(64, 0, 255, 0.1);
+  animation: slideInAndOut 3s ease-in-out forwards;
+}
+
+@keyframes slideInAndOut {
+  0% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  15% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  85% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .spp-layout {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .spp-container {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  .spp-layout {
+    grid-template-columns: 1fr; 
+    gap: 30px;
+  }
+  .spp-header {
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 5px;
+  }
+  .spp-title {
+    font-size: 2.2rem;
+  }
+  .spp-price {
+    font-size: 1.75rem;
+  }
+}
+
+/* --- Sale Badge and Price Styles --- */
+
+.spp-main-image-wrapper {
+  position: relative;
+}
+
+.spp-sale-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background-color: #ef4444; 
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: rotate(-5deg);
+}
+
+.spp-price {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.spp-sale-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ef4444; 
+}
+
+.spp-original-price {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #9ca3af; 
+  text-decoration: line-through;
+}

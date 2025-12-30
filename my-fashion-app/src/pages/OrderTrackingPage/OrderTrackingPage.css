@@ -1,0 +1,310 @@
+/* --- Main Page Container & Header --- */
+.track-page-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+}
+
+.track-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1.5rem;
+}
+
+.track-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.track-order-id {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* --- Loading & Not Found States --- */
+.track-loading,
+.track-not-found {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+}
+.track-not-found h2 {
+    font-size: 2rem;
+    color: #d9534f;
+}
+
+/* --- Main Content Grid Layout --- */
+.track-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.track-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.track-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* --- General Detail Card Styling --- */
+.detail-card {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.detail-card h2, .detail-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.detail-card p {
+  margin: 0.4rem 0;
+  line-height: 1.6;
+  color: #555;
+}
+
+.detail-card strong {
+  color: #222;
+}
+
+/* --- Visual Timeline --- */
+.timeline-container {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-step {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  min-height: 80px;
+}
+
+.timeline-step:last-child {
+  min-height: auto;
+}
+
+/* The vertical line */
+.timeline-step::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 25px;
+  width: 2px;
+  height: calc(100% - 10px);
+  background-color: #d1d5db; /* Default gray line */
+}
+
+.timeline-step:last-child::before {
+  display: none; /* No line after the last step */
+}
+
+.timeline-icon-container {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d1d5db; /* Default gray circle */
+  color: #fff;
+  z-index: 1;
+  font-size: 12px;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.timeline-label {
+    padding-top: 2px;
+}
+
+.timeline-label p { margin: 0; }
+.timeline-label small { color: #888; }
+
+/* Active & Completed States */
+.timeline-step.active .timeline-icon-container {
+  background-color: #3b82f6; /* Blue for active */
+}
+.timeline-step.active .timeline-label strong {
+  color: #3b82f6;
+}
+
+.timeline-step.completed .timeline-icon-container {
+  background-color: #22c55e; /* Green for completed */
+}
+.timeline-step.completed::before {
+  background-color: #22c55e; /* Green line */
+}
+
+/* --- Item Summary Styling --- */
+.track-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.track-item:last-child {
+    border-bottom: none;
+}
+
+.track-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.track-item-details {
+    flex-grow: 1;
+}
+.track-item-name {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+.track-item-price {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* --- Sidebar Summary --- */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    color: #555;
+}
+.summary-row.total {
+    font-size: 1.1rem;
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid #e0e0e0;
+    color: #111;
+}
+
+/* --- Buttons --- */
+.continue-shopping-btn {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+.continue-shopping-btn:hover {
+  background-color: #333;
+}
+
+/* --- Canceled Order Styling --- */
+.canceled-card {
+  text-align: center;
+  padding: 2.5rem 1.5rem !important;
+}
+
+.canceled-icon {
+  font-size: 3rem;
+  color: #d9534f; /* Red color */
+  margin-bottom: 1rem;
+}
+
+.canceled-card h2 {
+  font-size: 1.75rem;
+  color: #d9534f;
+  border-bottom: none;
+  margin-bottom: 0.5rem;
+}
+
+.canceled-card p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 450px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.canceled-card .continue-shopping-btn {
+  margin-top: 0.5rem;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .track-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Lookup Form Styling --- */
+.track-lookup-container {
+  max-width: 500px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.lookup-icon {
+  font-size: 3rem;
+  color: #3b82f6; /* Blue */
+  margin-bottom: 1rem;
+}
+
+.track-lookup-container .detail-card {
+  padding: 2.5rem 2rem !important;
+}
+
+.track-lookup-container h2 {
+  font-size: 1.75rem;
+  border-bottom: none;
+  margin-bottom: 0.5rem;
+}
+
+.track-lookup-container p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.track-lookup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.track-lookup-form input {
+  font-size: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Fix for login icon color */
+.track-lookup-container .fa-sign-in-alt {
+    color: #3b82f6;
+}

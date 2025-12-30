@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: linear-gradient(135deg, #0045b4, #a601d8);
+    min-height: 77px;
+    box-shadow: 0 4px 6px rgba(30, 30, 30, 0.3);
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically align items */
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0 auto; /* Center the nav links */
+    padding: 0; /* Remove default padding */
+}
+
+.nav-links .dropdown:hover .dropbtn,
+.nav-links .nav-link-item:hover { /* Target specific elements */
+    color: #f0f0f0; /* Slightly lighter on hover */
+    transform: scale(1.05);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 14px 16px; /* Consistent padding */
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Add transform */
+    display: flex; /* Align arrow */
+    align-items: center; /* Align arrow */
+}
+
+.dropbtn::after {
+    content: "";
+    width: .45rem;
+    height: .45rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    margin-bottom: 2px;
+    display: inline-block;
+    margin-left: 6px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.dropdown:hover .dropbtn::after {
+    transform: rotate(-135deg);
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 200px; /* Adjust width as needed */
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0.03rem;
+    background-color: #ffffff;
+    box-shadow: 0px 6px 16px rgba(80, 80, 80, 0.08);
+    padding: 0.5rem 0;
+    flex-direction: column;
+    z-index: 10;
+    max-height: none;
+    overflow-y: visible;
+    border-radius: 4px; /* Added rounded corners */
+}
+
+.dropdown-content a {
+    padding: 0.75rem 1rem;
+    color: #000000;
+    font-size: 1rem; /* Adjusted size */
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease-in-out;
+    text-align: left; /* Left align */
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Hover background */
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    border-radius: 40px;
+    padding: 0.2rem 1rem;
+    margin-right: 1.5rem;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 1rem; /* Adjusted size */
+    padding-left: 0.5rem;
+    width: 200px;
+    height: 2.5rem;
+}
+
+.search-container input::placeholder {
+    color: #4d4c4c;
+}
+
+.search-button {
+    border: none;
+    outline: none;
+    background: none; /* Make transparent */
+    padding: 0;
+    cursor: pointer;
+}
+
+.user-action {
+    display: flex;
+    align-items: center;
+}
+
+.cart-btn,
+.account-btn {
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0 1rem; /* Space out icons */
+    color: #ffffff; /* Make icons white */
+    text-decoration: none; /* Remove underline */
+    position: relative; /* Needed for badge */
+    display: inline-block;
+}
+
+
+.cart-btn {
+ /* position: relative; already set */
+ /* display: inline-block; already set */
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px; /* Adjusted position */
+    right: -12px; /* Adjusted position */
+    background-color: #ff4d4d; /* Brighter red */
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white; /* Optional border */
+}
+
+.nav-link-item {
+    color: #ffffff;            /* Match dropbtn color */
+    padding: 14px 16px;        /* Match dropbtn padding */
+    text-decoration: none;
+    font-size: 1.2rem;         /* Match dropbtn font size */
+    font-weight: 600;          /* Match dropbtn font weight */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline-block;     /* Align horizontally */
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Match transitions */
+    line-height: normal;       /* Ensure consistent vertical alignment */
+}

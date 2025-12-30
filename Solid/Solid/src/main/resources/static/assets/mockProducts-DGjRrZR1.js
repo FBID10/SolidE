@@ -1,0 +1,1 @@
+import{t as e}from"./index-CGFJLALA.js";export{e as mockProducts};

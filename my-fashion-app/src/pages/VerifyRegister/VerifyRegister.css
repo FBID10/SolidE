@@ -1,0 +1,60 @@
+.verify-page-wrapper, .forgot-page-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.verify-container, .forgot-container {
+  width: 420px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 6px 30px rgba(20,20,40,0.08);
+  padding: 28px;
+}
+
+.verify-form h2, .forgot-form h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  font-size: 28px;
+}
+
+.verify-field, .forgot-field {
+  margin-bottom: 12px;
+}
+
+.verify-field label, .forgot-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.verify-field input, .forgot-field input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e6e9ef;
+  background: #fafbfd;
+}
+
+.verify-button, .forgot-button {
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  background: linear-gradient(90deg,#0b2b6b,#5f0a6b);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-weight: 600;
+}
+
+.verify-button:disabled, .forgot-button:disabled {
+  opacity: 0.7;
+}
+
+.verify-container p, .forgot-container p {
+  color: #333;
+  font-size: 14px;
+}
+

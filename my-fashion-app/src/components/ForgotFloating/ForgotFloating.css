@@ -1,0 +1,23 @@
+/* ForgotFloating styles */
+.forgot-floating {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 20000;
+}
+
+.forgot-floating-link {
+  display: inline-block;
+  padding: 10px 14px;
+  background: linear-gradient(90deg,#0b2b6b,#5f0a6b);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(11,43,107,0.18);
+}
+
+.forgot-floating-link:hover {
+  transform: translateY(-2px);
+  transition: transform 150ms ease;
+}

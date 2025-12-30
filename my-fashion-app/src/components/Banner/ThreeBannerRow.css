@@ -1,0 +1,112 @@
+.banner-row-container {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box; 
+  margin-top: 2.5rem; /* reduced top spacing */
+}
+
+
+.banner-item {
+  position: relative;
+  flex: 1;
+  height: 36vh; /* reduced from 60vh */
+  min-height: 240px;
+  max-height: 420px;
+  border-radius: 12px;
+  overflow: hidden; 
+  display: flex;
+  align-items: flex-end; 
+  justify-content: flex-start;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.banner-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.banner-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* use container height */
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.4s ease-out;
+}
+
+.banner-item:hover .banner-bg-image {
+  transform: scale(1.04);
+}
+
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 10%, transparent 50%);
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.banner-item:hover .banner-overlay {
+  background-color: rgba(0, 0, 0, 0.22);
+}
+
+
+.banner-content {
+  position: relative;
+  z-index: 3; 
+  padding: 24px;
+  text-align: left;
+}
+
+.banner-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.banner-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-top: 8px;
+  display: inline-block;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.banner-item:hover .banner-subtitle {
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .banner-row-container { gap: 12px; padding: 16px; }
+  .banner-item { height: 32vh; }
+  .banner-title { font-size: 1.4rem; }
+}
+
+@media screen and (max-width: 768px) {
+  .banner-row-container {
+    flex-direction: column; 
+  }
+
+  .banner-item {
+    height: 40vh; /* slightly taller on smaller screens for visual balance */
+    min-height: 220px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+}

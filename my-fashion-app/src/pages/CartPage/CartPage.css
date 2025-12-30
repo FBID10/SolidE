@@ -1,0 +1,547 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   Page Layout & Base Styles
+   ========================================================================== */
+
+.cart-page-with-banners {
+  display: flex; /* Main layout: Banners | Content | Banners */
+  justify-content: center; /* Center the whole group */
+  gap: 30px;
+  padding: 40px 30px;
+  max-width: 1700px; /* Allow wider layout */
+  margin: 0 auto; /* Center the container */
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb; /* Light page background */
+  align-items: stretch; /* Make direct children (banners, content) same height */
+}
+
+/* ==========================================================================
+   Side Banners
+   ========================================================================== */
+
+.side-banner {
+  width: 180px; /* Fixed width for banners */
+  flex-shrink: 0; /* Prevent banners from shrinking */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  position: sticky; /* Make banners stick while scrolling */
+  top: 100px; /* Stick below the header */
+  overflow: hidden;
+  display: flex; /* Use flex to control content inside (e.g., push link down) */
+  flex-direction: column;
+}
+
+.side-banner img {
+  max-width: 100%;
+  height: 100%; /* Make image fill the banner vertically */
+  object-fit: cover; /* Crop image nicely */
+  display: block; /* Remove extra space below images */
+}
+
+.side-banner a {
+  display: inline-block;
+  margin-top: auto; /* Push link to the bottom */
+  padding: 15px; /* Spacing for the link */
+  font-size: 0.9rem;
+  color: #012156;
+  font-weight: 500;
+  text-decoration: none;
+}
+.side-banner a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Main Cart Content Area
+   ========================================================================== */
+
+.cart-page-container {
+  flex-grow: 1; /* Allow content area to take remaining space */
+  max-width: 1200px; /* Limit content width for readability */
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.cart-page-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 30px;
+  color: #1f2937;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Layout for items list + summary sidebar */
+.cart-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start; /* Align tops */
+  flex-wrap: wrap; /* Allow summary to wrap on smaller screens */
+}
+
+/* Container for items list + suggestions */
+.cart-main-column {
+  flex: 1; /* Take up available space */
+  min-width: 0; /* Prevent flex item overflow */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between items list and suggestions */
+}
+
+/* ==========================================================================
+   Cart Items List & Individual Items
+   ========================================================================== */
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between individual cart items */
+}
+
+.cart-item {
+  display: grid;
+  /* Define columns: Image, Details, Quantity, Line Total, Remove Button */
+  grid-template-columns: 80px 1fr auto auto 40px;
+  gap: 15px;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.cart-item-image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.img-placeholder {
+  width: 80px;
+  height: 80px;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+}
+
+.cart-item-details {
+  text-align: left;
+  min-width: 0; /* Prevent details text from causing overflow */
+}
+
+.cart-item-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px;
+  white-space: nowrap; /* Prevent name wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add "..." if name is too long */
+  color: #1f2937;
+}
+
+.cart-item-options {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin: 0 0 6px;
+  display: block; /* Ensure it takes its own line */
+}
+
+.cart-item-price {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Quantity input styling */
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 20px; /* Pill shape */
+  overflow: hidden; /* Clip button corners to match pill shape */
+}
+
+.cart-item-quantity button {
+  background: #f9fafb;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  color: #4b5563;
+  transition: background-color 0.2s ease;
+}
+.cart-item-quantity button:hover {
+  background-color: #f3f4f6;
+}
+
+.cart-item-quantity span {
+  min-width: 25px; /* Ensure number doesn't jump around */
+  text-align: center;
+  font-weight: 500;
+  padding: 0 4px;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.cart-item-total {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: right;
+  min-width: 80px; /* Align totals nicely */
+  color: #1f2937;
+}
+
+.cart-item-remove {
+  background: transparent;
+  border: none;
+  color: #9ca3af; /* Light grey */
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+  padding: 5px;
+  justify-self: center; /* Center icon in its grid cell */
+  line-height: 1; /* Improve vertical alignment */
+}
+.cart-item-remove:hover {
+  color: #ef4444; /* Red on hover */
+}
+
+/* ==========================================================================
+   "You Might Also Like" Suggestions
+   ========================================================================== */
+
+.cart-suggestions-section {
+  width: 100%;
+}
+
+.cart-suggestions-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  text-align: left;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.cart-suggestions-grid {
+  display: grid;
+  /* Create responsive columns that are at least 220px wide */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+/* Simplified styles assuming ProductCard component handles its internal styles */
+.cart-suggestions-grid .product-card {
+  /* You might override specific ProductCard styles here if needed */
+  /* e.g., border: 1px solid #eee; */
+}
+
+/* ==========================================================================
+   Cart Summary Sidebar
+   ========================================================================== */
+
+.cart-summary {
+  flex-basis: 320px; /* Fixed width for the summary */
+  flex-shrink: 0; /* Don't allow it to shrink */
+  position: sticky; /* Stick to top while scrolling */
+  top: 100px;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db; /* Slightly darker border */
+  border-radius: 12px; /* More rounded */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Stronger shadow for highlight */
+}
+
+.cart-summary-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+  color: #1f2937;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+.cart-summary-row span:last-child { /* Style the value (price) */
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* Optional: Style for applied discount row */
+.cart-summary-row.discount span:last-child {
+  color: #16a34a; /* Green color for discount */
+  font-weight: 600;
+}
+
+.cart-summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #d1d5db; /* Separator line */
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* Coupon Code Input Area */
+.coupon-section {
+  margin: 20px 0;
+  padding-top: 15px;
+  border-top: 1px dashed #e5e7eb; /* Dashed separator */
+}
+
+.coupon-section label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.coupon-input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow: hidden; /* Clip button corners */
+}
+
+.coupon-icon {
+  padding: 0 10px;
+  color: #9ca3af;
+  background-color: #f9fafb;
+  align-self: stretch; /* Make icon background fill height */
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #d1d5db;
+}
+
+.coupon-input-group input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px;
+  font-size: 0.9rem;
+  outline: none; /* Remove focus outline */
+}
+
+.coupon-apply-btn {
+  background-color: #e5e7eb; /* Lighter grey button */
+  border: none;
+  padding: 10px 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap; /* Prevent wrapping */
+}
+.coupon-apply-btn:hover {
+  background-color: #d1d5db;
+}
+
+
+/* Buttons in Summary */
+.cart-checkout-button {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background: #1f2937; /* Dark button */
+  transition: background-color 0.2s ease;
+  text-align: center;
+  margin-top: 15px;
+}
+.cart-checkout-button:hover {
+  background: #374151;
+}
+
+.clear-cart-button {
+  display: block;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 10px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.clear-cart-button:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+/* ==========================================================================
+   Empty Cart Styles
+   ========================================================================== */
+
+.cart-page-container.cart-empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* Minimum height to allow vertical centering */
+  text-align: center;
+  padding: 40px;
+  /* Make sure it takes up space even without banners */
+  width: 100%;
+  max-width: 600px; /* Limit width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.cart-empty-icon {
+  font-size: 4rem;
+  color: #d1d5db; /* Light grey icon */
+  margin-bottom: 20px;
+}
+
+.cart-empty-container h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.cart-empty-container p {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* Shared button style for consistency */
+.continue-shopping-btn {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  background: #1f2937;
+  transition: background-color 0.2s ease;
+}
+.continue-shopping-btn:hover {
+  background: #374151;
+}
+
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+/* Hide banners on medium screens and down */
+@media (max-width: 1200px) {
+  .side-banner {
+    display: none;
+  }
+  .cart-page-with-banners {
+    padding: 40px 20px; /* Adjust padding */
+  }
+}
+
+/* Stack layout on smaller screens */
+@media (max-width: 992px) {
+  .cart-page-with-banners {
+    flex-direction: column;
+    align-items: center; /* Center items when stacked */
+  }
+  /* Banners are already hidden by the 1200px rule, but good to ensure stacking */
+  .side-banner {
+     display: none; /* Keep hidden */
+   }
+
+   /* Stack summary below items list */
+   .cart-layout {
+     flex-direction: column;
+   }
+   .cart-summary {
+     position: static; /* Unstick */
+     width: 100%; /* Full width */
+     margin-top: 30px;
+     flex-basis: auto; /* Reset flex basis */
+   }
+}
+
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+  .cart-page-container {
+    padding: 0 15px; /* Reduce horizontal padding */
+  }
+  .cart-page-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust cart item grid for mobile */
+  .cart-item {
+    /* Image | Details/Qty/Total | Remove */
+    grid-template-columns: 60px 1fr auto;
+    /* Row 1: Details, Row 2: Qty/Total */
+    grid-template-rows: auto auto;
+    padding: 12px;
+    gap: 10px;
+  }
+  .cart-item-image img,
+  .img-placeholder {
+    width: 60px;
+    height: 60px;
+    grid-row: 1 / 3; /* Span both rows */
+    align-self: center;
+  }
+  .cart-item-details {
+    grid-column: 2; /* Second column */
+    grid-row: 1; /* First row */
+    margin-bottom: 8px; /* Space before qty/total */
+  }
+  .cart-item-quantity {
+    grid-column: 2; /* Second column */
+    grid-row: 2; /* Second row */
+    justify-self: start; /* Align left */
+    padding: 2px 6px; /* Smaller padding */
+  }
+  .cart-item-total {
+    grid-column: 2; /* Second column */
+    grid-row: 2; /* Second row */
+    justify-self: end; /* Align right */
+    align-self: center; /* Vertically center */
+    font-size: 0.9rem;
+  }
+  .cart-item-remove {
+    grid-column: 3; /* Third column */
+    grid-row: 1 / 3; /* Span both rows */
+    align-self: center;
+    padding: 4px;
+  }
+
+  /* Stack suggestion cards */
+  .cart-suggestions-grid {
+    grid-template-columns: 1fr; /* Single column */
+  }
+}

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.hero {
+  position: relative;
+  width: 1520px;
+  height: 90vh;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-slider .hero-image {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.hero-slide {
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, calc(-50% + 30px));
+  width: 100%;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  max-width: 800px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 0.5s;
+}
+
+.slick-active .hero-content {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.001rem;
+  line-height: 1.2;
+}
+
+.hero-content h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.hero-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #012156, #3b004e);
+  color: #fff;
+  cursor: pointer;
+  margin-top: 0.01rem;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero .slick-dots {
+  bottom: 25px;
+}
+
+.hero .slick-dots li button:before {
+  font-size: 12px;
+  color: white;
+  opacity: 0.75;
+}
+
+.hero .slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
