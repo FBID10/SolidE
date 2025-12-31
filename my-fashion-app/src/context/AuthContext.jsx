@@ -46,7 +46,7 @@ export function AuthProvider({ children }) {
 
       if (token) {
         try {
-          const response = await fetch('http://localhost:9090/api/users/me', {
+          const response = await fetch(`${API_BASE_URL}/users/me`, {
             // Note: This check *requires* a token
             headers: { 'Authorization': `Bearer ${token}` },
           });
@@ -70,7 +70,7 @@ export function AuthProvider({ children }) {
   }, [token]);
 
   const login = async (email, password) => {
-    const loginResponse = await fetch('http://localhost:9090/api/auth/login', {
+    const loginResponse = await fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
@@ -83,7 +83,7 @@ export function AuthProvider({ children }) {
     const loginData = await loginResponse.json();
     const authToken = loginData.jwtToken;
 
-    const profileResponse = await fetch('http://localhost:9090/api/users/me', {
+    const profileResponse = await fetch(`${API_BASE_URL}/users/me`, {
       headers: { 'Authorization': `Bearer ${authToken}` },
     });
 
@@ -117,7 +117,7 @@ export function AuthProvider({ children }) {
 
   // New: confirm registration with email + token; sets auth token and profile
   const confirmRegister = async (email, tokenCode) => {
-    const resp = await fetch('http://localhost:9090/api/auth/confirm-register', {
+    const resp = await fetch(`${API_BASE_URL}/auth/confirm-register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, token: tokenCode }),
@@ -131,7 +131,7 @@ export function AuthProvider({ children }) {
     localStorage.setItem('authToken', jwtToken);
     setToken(jwtToken);
     // fetch profile
-    const profileResp = await fetch('http://localhost:9090/api/users/me', {
+    const profileResp = await fetch(`${API_BASE_URL}/users/me`, {
       headers: { 'Authorization': `Bearer ${jwtToken}` },
     });
     if (profileResp.ok) {
@@ -144,7 +144,7 @@ export function AuthProvider({ children }) {
   // Upgraded register function: registers then automatically logs in
   const register = async (email, password, name) => {
     // Step 1: Register the user
-    const registerResponse = await fetch('http://localhost:9090/api/auth/register', {
+    const registerResponse = await fetch(`${API_BASE_URL}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, name }),
