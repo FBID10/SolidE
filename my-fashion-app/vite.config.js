@@ -7,5 +7,8 @@ export default defineConfig({
   server: {
     port: 5173, // Default Vite port
     host: true  // Allows access from outside the container
+  },
+  define: {
+    'import.meta.env.VITE_API_URL': JSON.stringify(process.env.VITE_API_URL)
   }
 })
