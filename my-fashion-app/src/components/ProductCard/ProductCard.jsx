@@ -57,6 +57,7 @@ export default function ProductCard({ product }) {
             src={imageUrl || placeholderSvg}
             alt={product.product_name}
             className="product-image"
+            loading="lazy"
             onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = placeholderSvg; }}
           />
 
