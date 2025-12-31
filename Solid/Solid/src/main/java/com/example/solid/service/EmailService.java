@@ -17,11 +17,17 @@ public class EmailService {
     }
 
     public void sendEmail(String to, String subject, String body) {
-        SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom(fromEmail);
-        message.setTo(to);
-        message.setSubject(subject);
-        message.setText(body);
-        mailSender.send(message);
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom(fromEmail);
+            message.setTo(to);
+            message.setSubject(subject);
+            message.setText(body);
+            mailSender.send(message);
+            System.out.println("[EmailService] Email sent successfully to " + to + " from " + fromEmail);
+        } catch (Exception e) {
+            System.err.println("[EmailService] Failed to send email to " + to + ": " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
