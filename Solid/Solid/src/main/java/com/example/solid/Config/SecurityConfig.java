@@ -44,14 +44,12 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        // Allow localhost dev origins, Railway production origins, and custom domain
+        // Allow localhost dev origins and Railway production origins
         configuration.setAllowedOriginPatterns(Arrays.asList(
             "http://localhost:*", 
             "http://127.0.0.1:*",
             "https://*.railway.app",
-            "https://*.up.railway.app",
-            "https://shop.soliddesign.fit",
-            "https://admin.soliddesign.fit"
+            "https://*.up.railway.app"
         ));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
