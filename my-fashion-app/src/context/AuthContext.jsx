@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 
-const API_BASE_URL = window.CONFIG?.API_URL || import.meta.env.VITE_API_URL || 'http://localhost:9090/api';
+const API_BASE_URL = 'https://solide-production.up.railway.app/api';
 
 const AuthContext = createContext();
 

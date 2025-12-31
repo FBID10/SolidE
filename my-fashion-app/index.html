@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my-fashion-app</title>
     <script>
-      // Set API URL from environment variable at runtime
+      // Set API URL for production
       window.CONFIG = {
-        API_URL: '%VITE_API_URL%' !== '%VITE_API_URL%' ? '%VITE_API_URL%' : 'http://localhost:9090/api'
+        API_URL: 'https://solide-production.up.railway.app/api'
       };
     </script>
   </head>

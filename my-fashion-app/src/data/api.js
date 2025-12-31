@@ -1,5 +1,5 @@
-// Backend API base URL - reads from window.CONFIG set in index.html at runtime
-const API_BASE_URL = window.CONFIG?.API_URL || import.meta.env.VITE_API_URL || 'http://localhost:9090/api';
+// Backend API base URL - hardcoded to production
+const API_BASE_URL = 'https://solide-production.up.railway.app/api';
 
 // Cloudinary config (use unsigned upload preset in production; do NOT commit secrets)
 // NOTE: You provided cloud name and API secret; do not embed API secret in client code.
