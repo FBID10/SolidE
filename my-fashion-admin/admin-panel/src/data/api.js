@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:9090/api';
+const API_BASE_URL = window.CONFIG?.API_URL || import.meta.env.VITE_API_URL || 'http://localhost:9090/api';
 
 // Cloudinary config (unsigned preset recommended)
 const CLOUDINARY_CLOUD_NAME = 'dni9qj9qs';

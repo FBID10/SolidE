@@ -5,6 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>admin-panel</title>
+    <script>
+      // Set API URL from environment variable at runtime
+      window.CONFIG = {
+        API_URL: '%VITE_API_URL%' !== '%VITE_API_URL%' ? '%VITE_API_URL%' : 'http://localhost:9090/api'
+      };
+    </script>
   </head>
   <body>
     <div id="root"></div>
