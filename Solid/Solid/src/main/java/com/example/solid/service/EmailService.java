@@ -4,6 +4,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 
 @Service
 public class EmailService {
@@ -16,6 +17,7 @@ public class EmailService {
         this.fromEmail = fromEmail;
     }
 
+    @Async
     public void sendEmail(String to, String subject, String body) {
         try {
             SimpleMailMessage message = new SimpleMailMessage();
@@ -27,7 +29,8 @@ public class EmailService {
             System.out.println("[EmailService] Email sent successfully to " + to + " from " + fromEmail);
         } catch (Exception e) {
             System.err.println("[EmailService] Failed to send email to " + to + ": " + e.getMessage());
-            e.printStackTrace();
+            // Don't throw exception - allow registration to continue
+        }
         }
     }
 }
