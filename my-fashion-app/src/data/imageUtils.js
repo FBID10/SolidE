@@ -3,7 +3,7 @@
 // If it's an absolute server path (starts with '/'), prefix with backend base.
 // If it's a relative path, also prefix with backend base.
 
-const BACKEND_BASE = import.meta.env.VITE_API_URL || 'http://localhost:9090';
+const BACKEND_BASE = import.meta.env.VITE_API_URL || 'https://solide-production.up.railway.app/api';
 
 export function getImageUrl(path) {
   if (!path) return '';

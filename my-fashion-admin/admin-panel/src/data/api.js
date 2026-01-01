@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://solide-production.up.railway.app/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://solide-production.up.railway.app/api';
 
 // Cloudinary config (unsigned preset recommended)
 const CLOUDINARY_CLOUD_NAME = 'dni9qj9qs';
